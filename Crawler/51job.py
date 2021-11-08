@@ -18,6 +18,7 @@ csv_writer = csv.DictWriter(f, fieldnames=[
     '招聘详情页',
 ])
 csv_writer.writeheader()
+
 conn = pymysql.Connect(host = 'rm-bp1y78ry9s88298yfzo.mysql.rds.aliyuncs.com',
                        port = 3306,
                        user = 'huangdong0122',
@@ -57,3 +58,4 @@ for page in range(1, 11):
         csv_writer.writerow(dit)
         print(dit)
 conn.close()
+
