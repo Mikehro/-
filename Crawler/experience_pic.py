@@ -10,7 +10,7 @@ for i in range(len(df)):
     list=str.split('|')
     df.values[i]=list[1]
 data = df.value_counts()
-print(data)
+#print(data)
 
 labels = ['无需经验', '1年经验', '2年经验', '3-4年经验', '5-7年经验', '8-9年经验', '10年以上经验']
 nums = [data[i] for i in labels]
