@@ -1,0 +1,92 @@
+@charset "UTF-8";
+*{
+	margin:0;
+	padding:0;
+}
+ul{
+	list-style:none;
+}
+
+a{
+	text-decoration:none;
+}
+
+.main-wrapper{
+	padding-left:300px;
+}
+
+.aside-nav{
+	position:fixed;
+	top:0;
+	bottom:0;
+	width:300px;
+	background-color:#333;
+	color:#fff;
+}
+
+.aside-nav .nav-title{
+	height:80px;
+	line-height:80px;
+	text-align:center;
+	font-size:24px;
+	border-bottom:2px solid #222;
+}
+
+.aside-nav .nav-list .parentNav{
+	height:70px;
+	line-height:70px;
+	padding:0 16 px;
+	font-size:20px;
+	cursor:pointer;
+}
+
+.aside-nav .nav-list .parentNav i{
+	font-size:20px;
+}
+
+.aside-nav .nav-list .parentNav:hover{
+	background:#222;
+}
+
+.aside-nav .nav-list .parentNav i:last-child{
+	float:right;
+	
+}
+.aside-nav .nav-list .home{
+	height:70px;
+	line-height:70px;
+	padding:0 16 px;
+	font-size:20px;
+	cursor:pointer;
+}
+.aside-nav .nav-list .home:hover{
+	background:#222;
+}
+.aside-nav .nav-list  .home span a{
+	color:#fff;
+	width:100%;
+	box-sizing:border-box;
+	height:70px;
+	line-height:70px;
+}
+.aside-nav .nav-list .item.active .subNav{
+	display:block;
+}
+
+.aside-nav .nav-list .subNav{
+	display:none;
+}
+
+.aside-nav .nav-list .subNav li a{
+	color:#fff;
+	display:inline-block;
+	width:100%;
+	box-sizing:border-box;
+	height:40px;
+	line-height:40px;
+	padding-left:60px;
+}
+
+.aside-nav .nav-list .subNav li a:hover{
+	background-color:#222;
+}
