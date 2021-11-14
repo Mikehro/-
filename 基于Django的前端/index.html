@@ -94,7 +94,53 @@
 			</div>
 			</a>
 		</div>
-		  
+		  <script src="../../static/index/js/jquery.js"></script>
+			<script src="../../static/index/js/swiper.js"></script>
+			<script>{
+			    var swiper1 = new Swiper('#swp1', {
+			        // 如果需要分页器
+			  	    pagination: {
+			          	el: '.swiper-pagination',
+			          	type: 'progressbar',
+			        },
+			        // 如果需要前进后退按钮
+			        navigation: {
+			          	nextEl: '.swiper-button-next',
+			          	prevEl: '.swiper-button-prev',
+			        },
+			        autoplay: {
+			          	disableOnInteraction: false,
+			        },
+			        	effect: 'fade',
+			        	speed: 800
+			      })
+		   }
+			</script>
+			<script>
+				function planeshow(){
+					var i=Math.ceil(Math.random()*8);
+					b=$('#plane'+i);
+					a=document.getElementById("plane"+i);
+					if(a.style.visibility=='hidden'){
+						b.fadeIn(2000);
+						b.fadeIn(2000);
+					}
+					else{
+						b.fadeOut(2000);
+						b.fadeIn(2000);
+					}
+				}
+				var num = 10;
+				function test() {
+				    if(num < 0) {    //函数结束条件
+				        clearTimeout(t);
+				        return;
+				    }
+				    planeshow();  //函数主体内容
+				    t = setTimeout("test()", 1000); //单位是毫秒
+				}
+
+			</script>
 		  <script>
 		$(function(){
 			$("body").click(function(e){
