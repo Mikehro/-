@@ -1,10 +1,9 @@
 import pymysql
 
-# 链接数据库
-config = {'host': '',
+config = {'host': 'Huangdong521',
           'port': 3306,
-          'user': 'root',
-          'passwd': '123456',
+          'user': 'huangdong0122',
+          'passwd': 'Huangdong521',
           'charset': 'utf8mb4',
           'local_infile': 1
           }
