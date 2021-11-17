@@ -4,7 +4,7 @@ import csv
 url = "https://careers.tencent.com/tencentcareer/api/post/Query"
 
 headers = {
-    "user-agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36",
 }
 
 params = {'area': ' cn',
@@ -36,7 +36,6 @@ def get_position(data):
         "postion_location":"",#职位所在地
         "postion_country":"",#职位所在国家
         "postion_category":"",#职位类别
-        "postion_responsibility":"",#职位职责
         "postion_url":"",#职位url
     }
     data_list = data["Data"]["Posts"]
@@ -45,7 +44,6 @@ def get_position(data):
         item["postion_location"] = data["LocationName"]
         item["postion_country"] = data["CountryName"]
         item["postion_category"] = data["CategoryName"]
-        item["postion_responsibility"] = data["Responsibility"]
         item["postion_url"] = data["PostURL"]
 
         save(item)
@@ -56,6 +54,7 @@ def save(item):
         writer = csv.writer(file)
         writer.writerow(item.values())
 
+
 def start():
     for i in range(1,618):
         params["pageIndex"] = i
@@ -63,4 +62,7 @@ def start():
         get_position(data)
 
 if __name__ == '__main__':
+    with open("./腾讯招聘.csv", "a", encoding="utf-8") as file:
+       writer = csv.writer(file)
+       writer.writerow(["职位名称", "职位所在地","职位所在国家","职位类别","职位url"])
     start()
