@@ -5,7 +5,7 @@ import pprint  # 格式化输出模块
 import csv  # 保存csv数据
 
 
-f = open('python招聘数据1.csv', mode='a', encoding='utf-8', newline='')
+f = open('python招聘数据.csv', mode='a', encoding='utf-8', newline='')
 csv_writer = csv.DictWriter(f, fieldnames=[
     '标题',
     '公司名字',
@@ -13,7 +13,6 @@ csv_writer = csv.DictWriter(f, fieldnames=[
     '薪资',
     '招聘信息',
     '公司属性',
-    '公司规模',
     '企业性质',
     '招聘发布日期',
     '公司详情页',
@@ -26,7 +25,7 @@ for page in range(1, 11):
     # 把python代码进行伪装, 伪装浏览器对服务器发送请求
     # User-Agent 浏览器的基本信息
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36'
     }
     response = requests.get(url=url, headers=headers)  # 调用 requests这个模块里面get方法对于 url发送请求
     #  2. 获取数据, 获取服务器发给我们返回的数据响应数据
@@ -61,7 +60,6 @@ for page in range(1, 11):
             '薪资': index['providesalary_text'],
             '招聘信息': '|'.join(index['attribute_text']),
             '公司属性': index['companyind_text'],
-            '公司规模': index['companysize_text'],
             '企业性质': index['companytype_text'],
             '招聘发布日期': index['issuedate'],
             '公司详情页': index['company_href'],
